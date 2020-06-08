@@ -16,18 +16,18 @@ Once the instance is created it will be assigned a unique identifier. All other 
 ```hcl
 # Minimum free lemur instance
 resource "cloudamqp_instance" "lemur_instance" {
-  name = "terraform-free-instance"
+  name = "tf-free-instance"
   plan = "lemur"
   region = "amazon-web-services::us-west-1"
 }
 
 # New dedicated bunny instance
 resource "cloudamqp_instance" "instance" {
-  name          = "terraform-cloudamqp-instance"
+  name          = "tf-cloudamqp-instance"
   plan          = "bunny"
   region        = "amazon-web-services::us-west-1"
   nodes         = 1
-  tags          = [ "terraform" ]
+  tags          = [ "tf" ]
   rmq_version   = "3.8.3"
 }
 ```

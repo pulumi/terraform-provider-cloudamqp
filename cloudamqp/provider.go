@@ -8,13 +8,13 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
-var version string
+const version = "1.7.0"
 
 func Provider() *schema.Provider {
 	log.Printf("Terraform-Provider-CloudAMQP Version: %s", version)
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
-			"apikey": &schema.Schema{
+			"apikey": {
 				Type:        schema.TypeString,
 				Required:    true,
 				DefaultFunc: schema.EnvDefaultFunc("CLOUDAMQP_APIKEY", nil),

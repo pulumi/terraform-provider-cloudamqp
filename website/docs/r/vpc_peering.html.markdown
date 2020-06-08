@@ -13,7 +13,7 @@ Only available for dedicated subscription plans.
 
 ## Example Usage
 
-One way to manage the vpc peering is to combine CloudAMQP Terraform provider with AWS Terraform provider and run them at the same time.
+One way to manage the vpc peering is to combine this CloudAMQP provider with the AWS provider and run them at the same time.
 
 ```hcl
 # Configure CloudAMQP provider
@@ -23,11 +23,11 @@ resource "cloudamqp" {
 
 # CloudAMQP - new instance, need to be created with a vpc
 resource "cloudamqp_instance" "instance" {
-  name   = "terraform-vpc-accepter"a
+  name   = "tf-vpc-accepter"a
   plan   = "bunny"
   region = "amazon-web-services::us-east-1"
   nodes = 1
-  tags   = ["terraform"]
+  tags   = ["tf"]
   rmq_version = "3.8.4"
   vpc_subnet = "10.40.72.0/24"
 }
